@@ -6,7 +6,6 @@ function App() {
   const [output, setOutput] = useState("");
   const [expression, setExpression] = useState("");
   const [clearScreen, setClearScreen] = useState(false);
-  console.log("rendered");
 
   function renderSymbolPressed(e) {
     if (clearScreen) {
