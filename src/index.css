@@ -1,11 +1,17 @@
 :root {
-  --calculator-width: 500px;
+  --calculator-width: 1000px;
+  --button-height: 50px;
+  --output-height: 100px;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #output {
   width: var(--calculator-width);
   background-color: black;
-  height: 40px;
+  height: var(--output-height);
   text-align: right;
 }
 
@@ -13,7 +19,7 @@
   display: inline-block;
   color: white;
   font-weight: bold;
-  text-align: center;
+  font-size: 3em;
   margin-top: 10px;
   /* Span has max width of 15 characters (like having maxlength=15 for html input element. */
   max-width: 40ch;
@@ -31,17 +37,19 @@
   border-radius: 2px;
   width: 25%;
   cursor: pointer;
-  height: 30px;
+  height: var(--button-height);
 }
 
 #buttons span {
   color: white;
+  font-size: 2em;
 }
 
 #clear, #backspace {
   width: 50%;
   background-color: white;
   cursor: pointer;
+  height: var(--button-height);
 }
 
 #clear span, #backspace span {
