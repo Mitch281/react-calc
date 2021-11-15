@@ -50,10 +50,10 @@ const Buttons = (props) => {
             <button type="button" className="operation" id="+" onClick={(e) => props.onClick(e)}>
                 <span>+</span>
             </button>
-            <button type="button" id="clear"> 
+            <button type="button" id="clear" onClick={() => props.onClear()}> 
                 <span>AC</span>
             </button>
-            <button type="button" id="backspace">
+            <button type="button" id="backspace" onClick={() => props.onBackspace()}>
                 <span>Backspace</span>
             </button>
         </div>

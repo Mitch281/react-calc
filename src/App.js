@@ -16,6 +16,7 @@ function App() {
     setOutput((output) => output + e.target.textContent);
   }
 
+  // This function replaces rendered symbols with the appropriate symbols for the eval function.
   function sanitiseExpression() {
     // We need an expression clone here because we do not want to alter the state of the expression. Otherwise,
     // this will result in a premature re-render of the application and thus, we will have to press the equals button
@@ -43,7 +44,17 @@ function App() {
       setOutput(eval(expressionClone).toString());
       setClearScreen(true);
     } catch (error) {
+      setOutput("Syntax Error");
+      setClearScreen(true);
     }
+  }
+
+  function clearOutput() {
+    setOutput("");
+  }
+
+  function backspace() {
+    setOutput((output) => output.substring(0, output.length - 1));
   }
 
   // Whenever we update the output, we want to update the expression to output as well.
@@ -54,7 +65,8 @@ function App() {
   return (
     <div className="App">
       <Output output={output} />
-      <Buttons onClick={renderSymbolPressed} onCalculate={calculateExpression} />
+      <Buttons onClick={renderSymbolPressed} onCalculate={calculateExpression} onClear={clearOutput}
+      onBackspace={backspace} />
     </div>
   );
 }
