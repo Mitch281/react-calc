@@ -5,17 +5,20 @@ import Output from "./components/Output";
 function App() {
   const [output, setOutput] = useState("");
   const [expression, setExpression] = useState("");
-  let clearScreen = false;
-  console.log(output);
-  console.log(expression);
+  const [clearScreen, setClearScreen] = useState(false);
 
   function renderSymbolPressed(e) {
+    if (clearScreen) {
+      setOutput("");
+      setClearScreen(false);
+    }
     setOutput((output) => output + e.target.textContent);
   }
 
   function calculateExpression() {
     try {
       setOutput(eval(expression).toString());
+      setClearScreen(true);
     } catch (error) {
     }
   }
