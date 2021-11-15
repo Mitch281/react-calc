@@ -1,7 +1,7 @@
-const Output = () => {
+const Output = (props) => {
     return (
         <div id="output">
-            <span></span>
+            <span>{props.output}</span>
         </div>
     )
 }
