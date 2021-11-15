@@ -1,0 +1,58 @@
+:root {
+  --calculator-width: 500px;
+}
+
+#output {
+  width: var(--calculator-width);
+  background-color: black;
+  height: 40px;
+  text-align: right;
+}
+
+#output span {
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  /* Span has max width of 15 characters (like having maxlength=15 for html input element. */
+  max-width: 40ch;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: var(--calculator-width);
+}
+
+#buttons button:not(#clear, #backspace) {
+  border: 1px solid black;
+  border-radius: 2px;
+  width: 25%;
+  cursor: pointer;
+  height: 30px;
+}
+
+#buttons span {
+  color: white;
+}
+
+#clear, #backspace {
+  width: 50%;
+  background-color: white;
+  cursor: pointer;
+}
+
+#clear span, #backspace span {
+  color: black;
+  height: 30px;
+}
+
+.number, .decimal {
+  background-color: #FF9500
+}
+
+.operation {
+  background-color: #505050;
+}
